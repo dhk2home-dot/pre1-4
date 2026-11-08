@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="미션 4 영화 티어리스트 제작 기록">
+  <title>미션 4 기록</title>
+  <style>
+    :root {
+      --paper: #faf8f3;
+      --surface: #fff;
+      --ink: #242922;
+      --muted: #5f685d;
+      --line: #d9dad1;
+      --green: #276453;
+      --sage: #e3eee7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 16px 48px;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.75 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: clamp(22px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+      box-shadow: 0 12px 36px rgba(36, 41, 34, .06);
+    }
+    h1 { margin: 0 0 24px; font-size: clamp(30px, 6vw, 42px); line-height: 1.25; letter-spacing: -.04em; }
+    h2 {
+      margin: 30px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      color: var(--green);
+      font-size: 21px;
+      line-height: 1.4;
+    }
+    p { margin: 8px 0; }
+    ul { margin: 8px 0 16px; padding-left: 1.4em; }
+    li { margin: 6px 0; padding-left: .1em; }
+    strong { color: var(--ink); }
+    a { color: var(--green); text-underline-offset: 3px; }
+    code {
+      padding: 2px 6px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--sage);
+      font: .9em ui-monospace, SFMono-Regular, Consolas, monospace;
+      overflow-wrap: anywhere;
+    }
+    .table-wrap { width: 100%; overflow-x: auto; margin: 14px 0; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { min-width: 150px; padding: 11px 12px; border: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--sage); font-weight: 700; }
+    td:first-child { white-space: nowrap; }
+    @media (max-width: 520px) {
+      body { padding: 14px 8px 24px; font-size: 15px; }
+      main { padding: 20px 16px; border-radius: 14px; }
+      h2 { font-size: 19px; }
+      th, td { padding: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>미션 4 기록</h1>
+
+    <p><strong>사용한 AI 이름:</strong> VS Code의 Copilot SDK를 사용하는 AI assistant</p>
+    <p><strong>주요 대화 캡처 파일명:</strong> 별도 대화 캡처 파일은 없음. 대화와 산출물 요약은 <a href="산출물_제작_대화요약.md">산출물_제작_대화요약.md</a>에 기록</p>
+
+    <h2>더한 기능과 고른 이유</h2>
+    <ul>
+      <li>영화별 기본 포스터 그래픽 표시 — 카드에서 영화를 쉽게 구분할 수 있도록 추가</li>
+      <li>영화 제목·포스터 주소·티어 입력 폼 — 새 영화를 원하는 등급에 포스터와 함께 추가할 수 있도록 추가</li>
+      <li>넓은 화면에서 한 줄로 보이는 반응형 입력 폼 — 입력 항목을 한눈에 보고 좁은 화면에서는 잘림을 방지하도록 수정</li>
+      <li>카드별 삭제와 확인창 — 잘못된 삭제를 방지하고 원치 않는 영화를 목록에서 제거할 수 있도록 추가</li>
+      <li>카드 오른쪽 위 원형 × 삭제 버튼 — 삭제 기능을 카드 안에서 알아보기 쉽게 배치</li>
+      <li>기능 변경에 맞춘 기획 문서와 HTML 문서 — 완성된 동작과 기준을 확인하고 공유할 수 있도록 정리</li>
+    </ul>
+
+    <h2>받은 파일별 조치</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>받은 파일</th>
+            <th>맞지 않은 완성 기준</th>
+            <th>한 일 (고치기 / 원래 파일로 돌아가기 / 완성)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>영화_원본.html</code></td>
+            <td>원래 <code>기획서.md</code>의 완성 기준은 확인 당시 모두 충족. 추가 요청으로 포스터 표시가 필요했음</td>
+            <td>원본은 보존하고 기본 그래픽 포스터를 넣은 <code>영화_수정본.html</code>을 별도로 완성</td>
+          </tr>
+          <tr>
+            <td><code>영화_수정본.html</code></td>
+            <td>기본 포스터는 있었으나 포스터 주소와 티어를 입력하는 기능이 필요했음</td>
+            <td>제목·포스터 주소·티어를 입력할 수 있는 <code>영화_수정본1.html</code>을 별도로 완성</td>
+          </tr>
+          <tr>
+            <td><code>영화_수정본1.html</code></td>
+            <td>영화 카드별 삭제 기능이 필요했음</td>
+            <td>확인창이 있는 삭제 기능을 <code>영화_수정본2.html</code>에 추가하고, 삭제 버튼을 카드 오른쪽 위 ×로 수정</td>
+          </tr>
+          <tr>
+            <td><code>영화_수정본2.html</code></td>
+            <td>기능 확인 후 추가 수정 요청 없음</td>
+            <td>삭제 확인·취소, 저장, 초기화 및 × 버튼 위치를 확인해 완성</td>
+          </tr>
+          <tr>
+            <td><code>기회서.md</code></td>
+            <td>작업 폴더에서 해당 이름의 파일을 찾지 못함</td>
+            <td>사용자 확인을 거쳐 <code>기획서.md</code>를 기준으로 <code>기회서_수정본.md</code> 작성</td>
+          </tr>
+          <tr>
+            <td><code>기회서_수정본.md</code></td>
+            <td>Markdown 문서의 HTML 버전이 필요했음</td>
+            <td>내용을 <code>기획서_수정본.html</code>로 변환해 별도 저장</td>
+          </tr>
+          <tr>
+            <td><code>영화_완성본.html</code></td>
+            <td>사용자가 최종 산출물 파일로 제시했으며, 이 기록 작성 시 별도 검증 내역은 없음</td>
+            <td>최종 산출물로 기록</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
